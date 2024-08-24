@@ -637,10 +637,10 @@
 
             // Format the WhatsApp message with newlines (%0A) and bold text (*text*)
             const whatsappMessage1 = `*Name:* ${name1}%0A`
-                + `*Email:* ${email1}%0A`
-                + `*Phone:* ${phone1}%0A`
-                + `*Subject:* ${subject1}%0A`
-                + `*Message:* ${message1}`;
+                `*Email:* ${email1}%0A`+
+                `*Phone:* ${phone1}%0A`+
+                `*Subject:* ${subject1}%0A`+
+                `*Message:* ${message1}`;
 
             const phoneNumber1 = '918883674887'; // Replace with the WhatsApp number you want to send to
             const whatsappUrl1 = `https://wa.me/${phoneNumber1}?text=${encodeURIComponent(whatsappMessage1)}`;
