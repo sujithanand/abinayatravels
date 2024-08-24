@@ -369,33 +369,33 @@
 		}
 
 		function sendWhatsAppMessage1() {
-    // Get form values and trim them
-    const name = encodeURIComponent(document.getElementById('name').value.trim());
-    const vehicleType = encodeURIComponent(document.getElementById('vehicleType').value.trim());
-    const fromCity = encodeURIComponent(document.getElementById('fromCity').value.trim());
-    const toCity = encodeURIComponent(document.getElementById('toCity').value.trim());
-    const departureDate = encodeURIComponent(document.getElementById('departureDate').value.trim());
-    const returnDate = encodeURIComponent(document.getElementById('returnDate').value.trim());
-    const specialRequest = encodeURIComponent(document.getElementById('message').value.trim());
+			// Get form values and trim them
+			const name = encodeURIComponent(document.getElementById('name').value.trim());
+			const vehicleType = encodeURIComponent(document.getElementById('vehicleType').value.trim());
+			const fromCity = encodeURIComponent(document.getElementById('fromCity').value.trim());
+			const toCity = encodeURIComponent(document.getElementById('toCity').value.trim());
+			const departureDate = encodeURIComponent(document.getElementById('departureDate').value.trim());
+			const returnDate = encodeURIComponent(document.getElementById('returnDate').value.trim());
+			const specialRequest = encodeURIComponent(document.getElementById('message').value.trim());
 
-    // Construct the message with new lines
-    const message = `*Name:* ${name}%0A` +
-                    `*Vehicle Type:* ${vehicleType}%0A` +
-                    `*From:* ${fromCity}%0A` +
-                    `*To:* ${toCity}%0A` +
-                    `*Departure Date:* ${departureDate}%0A` +
-                    `*Return Date:* ${returnDate}%0A` +
-                    `*Special Requests:* ${specialRequest}`;
+			// Construct the message with new lines
+			const message = `*Name:* ${name}%0A` +
+				`*Vehicle Type:* ${vehicleType}%0A` +
+				`*From:* ${fromCity}%0A` +
+				`*To:* ${toCity}%0A` +
+				`*Departure Date:* ${departureDate}%0A` +
+				`*Return Date:* ${returnDate}%0A` +
+				`*Special Requests:* ${specialRequest}`;
 
-    // Phone number in international format
-    const phoneNumber = '918883674887';  // Replace with your number
+			// Phone number in international format
+			const phoneNumber = '918883674887';  // Replace with your number
 
-    // Construct the WhatsApp URL using wa.me
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+			// Construct the WhatsApp URL using wa.me
+			const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
-    // Open WhatsApp with pre-filled message
-    window.open(whatsappUrl, '_blank');
-}
+			// Open WhatsApp with pre-filled message
+			window.open(whatsappUrl, '_blank');
+		}
 
 
 
@@ -611,7 +611,8 @@
 									</div>
 									<div class="col-12">
 										<div class="form-group login-btn">
-											<button class="btn" type="submit" onclick="sendWhatsAppMessage2()">Enquire in
+											<button class="btn" type="submit" onclick="sendWhatsAppMessage2()">Enquire
+												in
 												WhatsApp</button>
 										</div>
 									</div>
@@ -620,34 +621,34 @@
 
 							<script>
 								document.addEventListener('DOMContentLoaded', () => {
-									document.getElementById('whatsappForm').addEventListener('submit', function(event) {
+									document.getElementById('whatsappForm').addEventListener('submit', function (event) {
 										event.preventDefault(); // Prevent default form submission
-						
+
 										sendWhatsAppMessage2();
 									});
 								});
-						
-								
+
+
 								function sendWhatsAppMessage2() {
-            const name1 = document.getElementById('name1').value.trim();
-            const email1 = document.getElementById('email').value.trim();
-            const phone1 = document.getElementById('phone').value.trim();
-            const subject1 = document.getElementById('subject').value.trim();
-            const message1 = document.getElementById('message1').value.trim();
+									const name1 = document.getElementById('name1').value.trim();
+									const email1 = document.getElementById('email').value.trim();
+									const phone1 = document.getElementById('phone').value.trim();
+									const subject1 = document.getElementById('subject').value.trim();
+									const message1 = document.getElementById('message1').value.trim();
 
-            // Format the WhatsApp message with newlines (%0A) and bold text (*text*)
-            const whatsappMessage1 = `*Name:* ${name1}%0A`
-                `*Email:* ${email1}%0A`+
-                `*Phone:* ${phone1}%0A`+
-                `*Subject:* ${subject1}%0A`+
-                `*Message:* ${message1}`;
+									// Format the WhatsApp message with newlines (%0A) and bold text (*text*)
+									const whatsappMessage1 = `*Name:* ${name1}%0A` +
+										`*Email:* ${email1}%0A` +
+										`*Phone:* ${phone1}%0A` +
+										`*Subject:* ${subject1}%0A` +
+										`*Message:* ${message1}`;
 
-            const phoneNumber1 = '918883674887'; // Replace with the WhatsApp number you want to send to
-            const whatsappUrl1 = `https://wa.me/${phoneNumber1}?text=${encodeURIComponent(whatsappMessage1)}`;
+									const phoneNumber1 = '918883674887'; // Replace with the WhatsApp number you want to send to
+									const whatsappUrl1 = `https://wa.me/${phoneNumber1}?text=${encodeURIComponent(whatsappMessage1)}`;
 
-            // Open WhatsApp with pre-filled message
-            window.open(whatsappUrl1, '_blank');
-        }
+									// Open WhatsApp with pre-filled message
+									window.open(whatsappUrl1, '_blank');
+								}
 							</script>
 							<!--/ End Form -->
 						</div>
