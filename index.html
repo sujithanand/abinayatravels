@@ -385,7 +385,7 @@ function sendWhatsAppMessage1() {
     const phoneNumber = '8883674887';
 
     // Construct the WhatsApp URL using wa.me
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    const whatsappUrl = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${message}&type=phone_number&app_absent=0`;
 
     // Open WhatsApp with pre-filled message
     window.open(whatsappUrl, '_blank');
