@@ -363,10 +363,10 @@
 				return;
 			}
 	
-			sendWhatsAppMessage();
+			sendWhatsAppMessage1();
 		}
 	
-		function sendWhatsAppMessage() {
+		function sendWhatsAppMessage1() {
 			const name = document.getElementById('name').value;
 			const vehicleType = document.getElementById('vehicleType').value;
 			const fromCity = document.getElementById('fromCity').value;
@@ -560,7 +560,7 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="form-group">
-                <input type="text" id="name" name="name" placeholder="Name" required="">
+                <input type="text" id="name1" name="name" placeholder="Name" required="">
             </div>
         </div>
         <div class="col-lg-6">
@@ -580,7 +580,7 @@
         </div>
         <div class="col-lg-12">
             <div class="form-group">
-                <textarea id="message" name="message" placeholder="Your Message" required=""></textarea>
+                <textarea id="message1" name="message" placeholder="Your Message" required=""></textarea>
             </div>
         </div>
         <div class="col-12">
@@ -593,11 +593,11 @@
 
 <script>
     function sendWhatsAppMessage() {
-        const name = document.getElementById('name').value;
+        const name = document.getElementById('name1').value;
         const email = document.getElementById('email').value;
         const phone = document.getElementById('phone').value;
         const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
+        const message = document.getElementById('message1').value;
 
         // Construct the WhatsApp message with newlines (\n)
         const whatsappMessage = `Name: ${name}\n`
