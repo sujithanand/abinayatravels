@@ -368,7 +368,7 @@
 			sendWhatsAppMessage1();
 		}
 
-function sendWhatsAppMessage1() {
+		function sendWhatsAppMessage1() {
     // Get form values
     const name = encodeURIComponent(document.getElementById('name').value.trim());
     const vehicleType = encodeURIComponent(document.getElementById('vehicleType').value.trim());
@@ -378,18 +378,19 @@ function sendWhatsAppMessage1() {
     const returnDate = encodeURIComponent(document.getElementById('returnDate').value.trim());
     const specialRequest = encodeURIComponent(document.getElementById('message').value.trim());
 
-    // Construct the message with commas in one line
+    // Construct the message in one line, separated by commas
     const message = `Name%3A%20${name}%2C%20Vehicle%20Type%3A%20${vehicleType}%2C%20From%3A%20${fromCity}%2C%20To%3A%20${toCity}%2C%20Departure%20Date%3A%20${departureDate}%2C%20Return%20Date%3A%20${returnDate}%2C%20Special%20Requests%3A%20${specialRequest}`;
 
-    // Phone number
+    // Phone number in international format
     const phoneNumber = '8883674887';
 
     // Construct the WhatsApp URL using wa.me
-    const whatsappUrl = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${message}&type=phone_number&app_absent=0`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
     // Open WhatsApp with pre-filled message
     window.open(whatsappUrl, '_blank');
 }
+
 	</script>
 
 
