@@ -636,15 +636,13 @@
 									const subject1 = document.getElementById('subject').value.trim();
 									const message1 = document.getElementById('message1').value.trim();
 
-									// Format the WhatsApp message with newlines (%0A) and bold text (*text*)
-									const whatsappMessage1 = `*Name:* ${name1}%0A` +
-										`*Email:* ${email1}%0A` +
-										`*Phone:* ${phone1}%0A` +
-										`*Subject:* ${subject1}%0A` +
-										`*Message:* ${message1}`;
+									// Construct the WhatsApp message
+									const whatsappMessage1 = `*Name:* ${name1}\n*Email:* ${email1}\n*Phone:* ${phone1}\n*Subject:* ${subject1}\n*Message:* ${message1}`;
 
+									// URL encode the message
+									const encodedMessage = encodeURIComponent(whatsappMessage1);
 									const phoneNumber1 = '918883674887'; // Replace with the WhatsApp number you want to send to
-									const whatsappUrl1 = `https://wa.me/${phoneNumber1}?text=${encodeURIComponent(whatsappMessage1)}`;
+									const whatsappUrl1 = `https://wa.me/${phoneNumber1}?text=${encodedMessage}`;
 
 									// Open WhatsApp with pre-filled message
 									window.open(whatsappUrl1, '_blank');
