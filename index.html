@@ -56,7 +56,7 @@
 			<div class="loader-inner"></div>
 
 			<div class="indicator">
-				<i style="color: #fff; font-size: 32px;"class="icofont icofont-car-alt-1"></i>
+				<i style="color: #fff; font-size: 32px;" class="icofont icofont-car-alt-1"></i>
 			</div>
 		</div>
 	</div>
@@ -106,8 +106,8 @@
 										<li><a href="#whyUs">Why Us? </a></li>
 										<li><a href="#vechileFleet">Vechile Fleet </a></li>
 										<li><a href="#contact">Contact </a></li>
-										
-										</ul>
+
+									</ul>
 								</nav>
 							</div>
 							<script>
@@ -115,42 +115,42 @@
 								const menuItems = document.querySelectorAll('.nav.menu li a');
 								const sections = document.querySelectorAll('section');
 								const menuHeight = document.querySelector('.main-menu').offsetHeight;
-						
+
 								// Function to remove 'active' class from all menu items
 								function removeActiveClasses() {
 									menuItems.forEach(item => {
 										item.parentElement.classList.remove('active');
 									});
 								}
-						
+
 								// Function to add 'active' class to the current section's menu item
 								function setActiveClass() {
 									let currentIndex = sections.length;
-						
-									while (--currentIndex && window.scrollY + menuHeight < sections[currentIndex].offsetTop) {}
-						
+
+									while (--currentIndex && window.scrollY + menuHeight < sections[currentIndex].offsetTop) { }
+
 									removeActiveClasses();
 									menuItems[currentIndex].parentElement.classList.add('active');
 								}
-						
+
 								// Add click event to each menu item for smooth scroll
 								menuItems.forEach(item => {
-									item.addEventListener('click', function(e) {
+									item.addEventListener('click', function (e) {
 										e.preventDefault(); // Prevent default anchor click behavior
-						
+
 										const targetId = this.getAttribute('href').substring(1);
 										const targetSection = document.getElementById(targetId);
-						
+
 										window.scrollTo({
 											top: targetSection.offsetTop - menuHeight, // Adjust for fixed menu height
 											behavior: 'smooth'
 										});
-						
+
 										removeActiveClasses();
 										this.parentElement.classList.add('active');
 									});
 								});
-						
+
 								// Add scroll event listener to update active menu item
 								window.addEventListener('scroll', setActiveClass);
 							</script>
@@ -274,7 +274,7 @@
 									<input name="toCity" id="toCity" type="text" placeholder="To" required>
 								</div>
 							</div>
-							
+
 							<div class="col-lg-6 col-md-6 col-12">
 								<div class="form-group">
 									<input type="text" placeholder="Departure Date" id="departureDate" required>
@@ -287,7 +287,8 @@
 							</div>
 							<div class="col-lg-12 col-md-12 col-12">
 								<div class="form-group">
-									<textarea name="message" id="message" placeholder="Please mention if you have any special requests..."></textarea>
+									<textarea name="message" id="message"
+										placeholder="Please mention if you have any special requests..."></textarea>
 								</div>
 							</div>
 						</div>
@@ -295,7 +296,8 @@
 							<div class="col-lg-5 col-md-4 col-12">
 								<div class="form-group">
 									<div class="button">
-										<button type="button" class="btn" onclick="validateAndSendMessage()">Book My Ride</button>
+										<button type="button" class="btn" onclick="validateAndSendMessage()">Book My
+											Ride</button>
 									</div>
 								</div>
 							</div>
@@ -313,144 +315,150 @@
 			</div>
 		</div>
 	</section>
-	
+
 	<!-- Include jQuery and jQuery UI for Datepicker -->
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	
+
 	<script>
 		// Initialize Datepickers
-		$(function() {
+		$(function () {
 			const today = new Date();
-	
+
 			// Set up the Departure Date picker with minimum date as today
 			$("#departureDate").datepicker({
 				dateFormat: "yy-mm-dd",
 				minDate: today,
-				onSelect: function(selectedDate) {
+				onSelect: function (selectedDate) {
 					// Set the Return Date picker to have a minimum date of the selected Departure Date
 					$("#returnDate").datepicker("option", "minDate", selectedDate);
 				}
 			});
-	
+
 			// Set up the Return Date picker with no minimum date initially
 			$("#returnDate").datepicker({
 				dateFormat: "yy-mm-dd",
 				minDate: today // Initially set to today's date, will update based on Departure Date selection
 			});
 		});
-	
+
 		function validateAndSendMessage() {
 			const today = new Date();
 			const departureDate = new Date(document.getElementById('departureDate').value);
 			const returnDate = new Date(document.getElementById('returnDate').value);
-	
+
 			// Clear the time part for an accurate date comparison
 			today.setHours(0, 0, 0, 0);
 			departureDate.setHours(0, 0, 0, 0);
 			returnDate.setHours(0, 0, 0, 0);
-	
+
 			// Validate Departure Date is not less than today
 			if (departureDate < today) {
 				alert("Departure date cannot be earlier than today.");
 				return;
 			}
-	
+
 			// Validate Return Date is not earlier than Departure Date
 			if (returnDate < departureDate) {
 				alert("Return date cannot be earlier than departure date.");
 				return;
 			}
-	
+
 			sendWhatsAppMessage1();
 		}
-	
+
 		function sendWhatsAppMessage1() {
-    // Get form values
-    const name = encodeURIComponent(document.getElementById('name').value.trim());
-    const vehicleType = encodeURIComponent(document.getElementById('vehicleType').value.trim());
-    const fromCity = encodeURIComponent(document.getElementById('fromCity').value.trim());
-    const toCity = encodeURIComponent(document.getElementById('toCity').value.trim());
-    const departureDate = encodeURIComponent(document.getElementById('departureDate').value.trim());
-    const returnDate = encodeURIComponent(document.getElementById('returnDate').value.trim());
-    const specialRequest = encodeURIComponent(document.getElementById('message').value.trim());
+			// Get form values
+			const name = encodeURIComponent(document.getElementById('name').value.trim());
+			const vehicleType = encodeURIComponent(document.getElementById('vehicleType').value.trim());
+			const fromCity = encodeURIComponent(document.getElementById('fromCity').value.trim());
+			const toCity = encodeURIComponent(document.getElementById('toCity').value.trim());
+			const departureDate = encodeURIComponent(formatDate(document.getElementById('departureDate').value.trim()));
+			const returnDate = encodeURIComponent(formatDate(document.getElementById('returnDate').value.trim()));
+			const specialRequest = encodeURIComponent(document.getElementById('message').value.trim());
 
-    // Construct the message with line breaks
-    const message = `*Name*: ${name}%0A`
-                  + `*Vehicle Type*: ${vehicleType}%0A`
-                  + `*From*: ${fromCity}%0A`
-                  + `*To*: ${toCity}%0A`
-                  + `*Departure Date*: ${departureDate}%0A`
-                  + `*Return Date*: ${returnDate}%0A`
-                  + `*Special Requests*: ${specialRequest}`;
+			// Construct the message with dashes
+			const message = `Name - ${name}%0A`
+				+ `Vehicle Type - ${vehicleType}%0A`
+				+ `From - ${fromCity}%0A`
+				+ `To - ${toCity}%0A`
+				+ `Departure Date - ${departureDate}%0A`
+				+ `Return Date - ${returnDate}%0A`
+				+ `Special Requests - ${specialRequest}`;
 
-    // Phone number
-    const phoneNumber = '8883674887';
+			// Phone number
+			const phoneNumber = '8883674887';
 
-    // Construct the WhatsApp URL
-    const whatsappUrl = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${message}&type=phone_number&app_absent=0`;
+			// Construct the WhatsApp URL
+			const whatsappUrl = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${message}&type=phone_number&app_absent=0`;
 
-    // Open WhatsApp with pre-filled message
-    window.open(whatsappUrl, '_blank');
-}
+			// Open WhatsApp with pre-filled message
+			window.open(whatsappUrl, '_blank');
+		}
 
+		// Function to format dates from YYYY-MM-DD to YYYY-MM-DD (replacing / with -)
+		function formatDate(date) {
+			if (!date) return '';
+			return date.split('-').join('-'); // Adjust format as needed
+		}
 	</script>
-	
-	
-	
+
+
+
 	<!-- End Appointment -->
 
 	<!-- Start Feautes -->
 	<section class="pricing-table section" id="whyUs">
-	<section class="Feautes section">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="section-title">
-						<h2>What Makes Us Different</h2>
+		<section class="Feautes section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="section-title">
+							<h2>What Makes Us Different</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-12">
+						<!-- Start Single features -->
+						<div class="single-features">
+							<div class="signle-icon">
+								<i class="icofont icofont-money"></i>
+							</div>
+							<h3> For any budget </h3>
+							<p>We have a fleet of vechiles that allows us to serve you with a vechile that fits your
+								budget
+							</p>
+						</div>
+						<!-- End Single features -->
+					</div>
+					<div class="col-lg-4 col-12">
+						<!-- Start Single features -->
+						<div class="single-features">
+							<div class="signle-icon">
+								<i class="icofont icofont-road"></i>
+							</div>
+							<h3>For any distance</h3>
+							<p>You can book a cab within the city or outstations</p>
+						</div>
+						<!-- End Single features -->
+					</div>
+					<div class="col-lg-4 col-12">
+						<!-- Start Single features -->
+						<div class="single-features last">
+							<div class="signle-icon">
+								<i class="icofont icofont-clock-time"></i>
+							</div>
+							<h3>For any duration</h3>
+							<p>You can hire a cab with diver on day basis at your convinience</p>
+						</div>
+						<!-- End Single features -->
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-lg-4 col-12">
-					<!-- Start Single features -->
-					<div class="single-features">
-						<div class="signle-icon">
-							<i class="icofont icofont-money"></i>
-						</div>
-						<h3> For any budget </h3>
-						<p>We have a fleet of vechiles that allows us to serve you with a vechile that fits your budget
-						</p>
-					</div>
-					<!-- End Single features -->
-				</div>
-				<div class="col-lg-4 col-12">
-					<!-- Start Single features -->
-					<div class="single-features">
-						<div class="signle-icon">
-							<i class="icofont icofont-road"></i>
-						</div>
-						<h3>For any distance</h3>
-						<p>You can book a cab within the city or outstations</p>
-					</div>
-					<!-- End Single features -->
-				</div>
-				<div class="col-lg-4 col-12">
-					<!-- Start Single features -->
-					<div class="single-features last">
-						<div class="signle-icon">
-							<i class="icofont icofont-clock-time"></i>
-						</div>
-						<h3>For any duration</h3>
-						<p>You can hire a cab with diver on day basis at your convinience</p>
-					</div>
-					<!-- End Single features -->
-				</div>
-			</div>
-		</div>
+		</section>
 	</section>
-</section>
 	<!--/ End Feautes -->
 	<section class="services section" id="vechileFleet">
 		<div class="container">
@@ -458,7 +466,8 @@
 				<div class="col-lg-12">
 					<div class="section-title">
 						<h2>Our Vechile Fleet</h2>
-						<p>We have a fleet of vechiles that allows us to serve you with a vechile that fits your budget</p>
+						<p>We have a fleet of vechiles that allows us to serve you with a vechile that fits your budget
+						</p>
 					</div>
 				</div>
 			</div>
@@ -468,7 +477,10 @@
 					<div class="single-service">
 						<i class="icofont icofont-car-alt-2"></i>
 						<h4><a href="service-details.html">4+1 Seater</a></h4>
-						<p>Comfortable and Stylish Rides Our 4+1 sedan cars are perfect for small groups or families seeking a comfortable and stylish ride. With seating for up to 4 passengers and ample luggage space, our sedans are ideal for city tours, airport transfers, and business trips. Enjoy a smooth, hassle-free journey with luxurious interiors and modern amenities.</p>	
+						<p>Comfortable and Stylish Rides Our 4+1 sedan cars are perfect for small groups or families
+							seeking a comfortable and stylish ride. With seating for up to 4 passengers and ample
+							luggage space, our sedans are ideal for city tours, airport transfers, and business trips.
+							Enjoy a smooth, hassle-free journey with luxurious interiors and modern amenities.</p>
 					</div>
 					<!-- End Single Service -->
 				</div>
@@ -477,7 +489,10 @@
 					<div class="single-service">
 						<i class="icofont icofont-van"></i>
 						<h4><a href="service-details.html">7+1 Seater</a></h4>
-						<p>Spacious and Versatile For those needing a bit more room, our 7+1 cars like the Toyota Innova are the perfect choice. These vehicles offer spacious seating for up to 7 passengers, making them ideal for family outings, road trips, or group travel. With a combination of comfort and versatility, these cars ensure everyone enjoys the journey. </p>	
+						<p>Spacious and Versatile For those needing a bit more room, our 7+1 cars like the Toyota Innova
+							are the perfect choice. These vehicles offer spacious seating for up to 7 passengers, making
+							them ideal for family outings, road trips, or group travel. With a combination of comfort
+							and versatility, these cars ensure everyone enjoys the journey. </p>
 					</div>
 					<!-- End Single Service -->
 				</div>
@@ -486,7 +501,10 @@
 					<div class="single-service">
 						<i class="icofont icofont-bus-alt-2"></i>
 						<h4><a href="service-details.html">Tempo Travel</a></h4>
-						<p>Spacious and Versatile For those needing a bit more room, our 7+1 cars like the Toyota Innova are the perfect choice. These vehicles offer spacious seating for up to 7 passengers, making them ideal for family outings, road trips, or group travel. With a combination of comfort and versatility, these cars ensure everyone enjoys the journey. </p>	
+						<p>Spacious and Versatile For those needing a bit more room, our 7+1 cars like the Toyota Innova
+							are the perfect choice. These vehicles offer spacious seating for up to 7 passengers, making
+							them ideal for family outings, road trips, or group travel. With a combination of comfort
+							and versatility, these cars ensure everyone enjoys the journey. </p>
 					</div>
 					<!-- End Single Service -->
 				</div>
@@ -495,13 +513,17 @@
 					<div class="single-service">
 						<i class="icofont icofont-school-bus"></i>
 						<h4><a href="service-details.html">Bus</a></h4>
-						<p>Ideal for Large Groups When traveling with a large group, our buses are the ideal choice. Accommodating up to 50 passengers, our buses are perfect for school trips, corporate events, or large family gatherings. Equipped with comfortable seating, air conditioning, and entertainment options, our buses ensure that everyone arrives at their destination relaxed and refreshed.
+						<p>Ideal for Large Groups When traveling with a large group, our buses are the ideal choice.
+							Accommodating up to 50 passengers, our buses are perfect for school trips, corporate events,
+							or large family gatherings. Equipped with comfortable seating, air conditioning, and
+							entertainment options, our buses ensure that everyone arrives at their destination relaxed
+							and refreshed.
 
-						</p>	
+						</p>
 					</div>
 					<!-- End Single Service -->
 				</div>
-				
+
 			</div>
 		</div>
 	</section>
@@ -548,126 +570,129 @@
 	</div>
 	<!--/ End Fun-facts -->
 
-				
-		<!-- Start Contact Us -->
-		<section class="contact-us section" id="contact">
-			<div class="container">
-				<div class="inner">
-					<div class="row"> 
-					
-						<div class="col-lg-12">
-							<div class="contact-us-form" >
-								<h2>Contact With Us</h2>
-								<p>If you have any questions please fell free to contact with us.</p>
-								<!-- Form -->
-								<!-- Your Form -->
-<form class="form" id="whatsappForm" method="post" action="mail/mail.php">
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="form-group">
-                <input type="text" id="name1" name="name" placeholder="Name" required="">
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="form-group">
-                <input type="email" id="email" name="email" placeholder="Email" required="">
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="form-group">
-                <input type="text" id="phone" name="phone" placeholder="Phone" required="">
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="form-group">
-                <input type="text" id="subject" name="subject" placeholder="Subject" required="">
-            </div>
-        </div>
-        <div class="col-lg-12">
-            <div class="form-group">
-                <textarea id="message1" name="message" placeholder="Your Message" required=""></textarea>
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="form-group login-btn">
-                <button class="btn" type="button" onclick="sendWhatsAppMessage()">Enquire in WhatsApp</button>
-            </div>
-        </div>
-    </div>
-</form>
 
-<script>
-    function sendWhatsAppMessage() {
-        const name1 = document.getElementById('name1').value;
-        const email1 = document.getElementById('email').value;
-        const phone1 = document.getElementById('phone').value;
-        const subject1 = document.getElementById('subject').value;
-        const message1 = document.getElementById('message1').value;
+	<!-- Start Contact Us -->
+	<section class="contact-us section" id="contact">
+		<div class="container">
+			<div class="inner">
+				<div class="row">
 
-        // Construct the WhatsApp message with newlines (\n)
-        const whatsappMessage1 = `Name: ${name1}\n`
-                              + `Email: ${email1}\n`
-                              + `Phone: ${phone1}\n`
-                              + `Subject: ${subject1}\n`
-                              + `Message: ${message1}`;
-        
-        const phoneNumber1 = '8883674887'; // Replace with the WhatsApp number you want to send to
-        const whatsappUrl1 = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage1)}`;
-
-        // Open WhatsApp with pre-filled message
-        window.open(whatsappUrl, '_blank');
-    }
-</script>
-
-								<!--/ End Form -->
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="contact-info">
-					<div class="row">
-						<!-- single-info -->
-						<div class="col-lg-4 col-12 ">
-							<div class="single-info">
-								<i class="icofont icofont-ui-call"></i>
-								<div class="content">
-									<h3>+91 96004 92712</h3>
-									<p>rajuannamalai1984@gmail.com</p>
+					<div class="col-lg-12">
+						<div class="contact-us-form">
+							<h2>Contact With Us</h2>
+							<p>If you have any questions please fell free to contact with us.</p>
+							<!-- Form -->
+							<!-- Your Form -->
+							<form class="form" id="whatsappForm" method="post" action="mail/mail.php">
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="form-group">
+											<input type="text" id="name1" name="name" placeholder="Name" required="">
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<input type="email" id="email" name="email" placeholder="Email" required="">
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<input type="text" id="phone" name="phone" placeholder="Phone" required="">
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<input type="text" id="subject" name="subject" placeholder="Subject"
+												required="">
+										</div>
+									</div>
+									<div class="col-lg-12">
+										<div class="form-group">
+											<textarea id="message1" name="message" placeholder="Your Message"
+												required=""></textarea>
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="form-group login-btn">
+											<button class="btn" type="button" onclick="sendWhatsAppMessage()">Enquire in
+												WhatsApp</button>
+										</div>
+									</div>
 								</div>
-							</div>
+							</form>
+
+							<script>
+								function sendWhatsAppMessage() {
+									const name1 = document.getElementById('name1').value;
+									const email1 = document.getElementById('email').value;
+									const phone1 = document.getElementById('phone').value;
+									const subject1 = document.getElementById('subject').value;
+									const message1 = document.getElementById('message1').value;
+
+									// Construct the WhatsApp message with newlines (\n)
+									const whatsappMessage1 = `Name: ${name1}\n`
+										+ `Email: ${email1}\n`
+										+ `Phone: ${phone1}\n`
+										+ `Subject: ${subject1}\n`
+										+ `Message: ${message1}`;
+
+									const phoneNumber1 = '8883674887'; // Replace with the WhatsApp number you want to send to
+									const whatsappUrl1 = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage1)}`;
+
+									// Open WhatsApp with pre-filled message
+									window.open(whatsappUrl, '_blank');
+								}
+							</script>
+
+							<!--/ End Form -->
 						</div>
-						<!--/End single-info -->
-						<!-- single-info -->
-						<div class="col-lg-4 col-12 ">
-							<div class="single-info">
-								<i class="icofont-google-map"></i>
-								<div class="content">
-									<h3>No 9/ 290, Sowbaghiya Nagar</h3>
-									<p>Annaikoundampatty Salem - 636011</p>
-								</div>
-							</div>
-						</div>
-						<!--/End single-info -->
-						<!-- single-info -->
-						<div class="col-lg-4 col-12 ">
-							<div class="single-info">
-								<i class="icofont icofont-wall-clock"></i>
-								<div class="content">
-									<h3>Open 24/7</h3>
-									<p> Our office is open round the clock</p>
-								</div>
-							</div>
-						</div>
-						<!--/End single-info -->
 					</div>
 				</div>
 			</div>
-		</section>
-		<!--/ End Contact Us -->
+			<div class="contact-info">
+				<div class="row">
+					<!-- single-info -->
+					<div class="col-lg-4 col-12 ">
+						<div class="single-info">
+							<i class="icofont icofont-ui-call"></i>
+							<div class="content">
+								<h3>+91 96004 92712</h3>
+								<p>rajuannamalai1984@gmail.com</p>
+							</div>
+						</div>
+					</div>
+					<!--/End single-info -->
+					<!-- single-info -->
+					<div class="col-lg-4 col-12 ">
+						<div class="single-info">
+							<i class="icofont-google-map"></i>
+							<div class="content">
+								<h3>No 9/ 290, Sowbaghiya Nagar</h3>
+								<p>Annaikoundampatty Salem - 636011</p>
+							</div>
+						</div>
+					</div>
+					<!--/End single-info -->
+					<!-- single-info -->
+					<div class="col-lg-4 col-12 ">
+						<div class="single-info">
+							<i class="icofont icofont-wall-clock"></i>
+							<div class="content">
+								<h3>Open 24/7</h3>
+								<p> Our office is open round the clock</p>
+							</div>
+						</div>
+					</div>
+					<!--/End single-info -->
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--/ End Contact Us -->
 	<!-- Footer Area -->
 	<footer id="footer" class="footer ">
 		<!-- Footer Top -->
-		
+
 		<!-- Copyright -->
 		<div class="copyright">
 			<div class="container">
