@@ -374,8 +374,8 @@
     const vehicleType = encodeURIComponent(document.getElementById('vehicleType').value.trim());
     const fromCity = encodeURIComponent(document.getElementById('fromCity').value.trim());
     const toCity = encodeURIComponent(document.getElementById('toCity').value.trim());
-    const departureDate = encodeURIComponent(document.getElementById('departureDate').value.trim());
-    const returnDate = encodeURIComponent(document.getElementById('returnDate').value.trim());
+    const departureDate = encodeURIComponent(formatDate(document.getElementById('departureDate').value.trim()));
+    const returnDate = encodeURIComponent(formatDate(document.getElementById('returnDate').value.trim()));
     const specialRequest = encodeURIComponent(document.getElementById('message').value.trim());
 
     // Construct the message with commas
@@ -390,11 +390,18 @@
     // Phone number
     const phoneNumber = '8883674887';
 
-    // Construct the WhatsApp URL
-    const whatsappUrl = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${message}&type=phone_number&app_absent=0`;
+    // Construct the WhatsApp URL using wa.me
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
     // Open WhatsApp with pre-filled message
     window.open(whatsappUrl, '_blank');
+}
+
+// Function to format dates from YYYY-MM-DD to YYYY-MM-DD (if needed, adjust format as required)
+function formatDate(date) {
+    if (!date) return '';
+    // Replace slashes with dashes or any other preferred format
+    return date.split('-').join('-');
 }
 
 	</script>
