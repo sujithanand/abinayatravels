@@ -379,8 +379,13 @@
     const specialRequest = document.getElementById('message').value.trim().replace(/\s+/g, '');
 
     // Construct the message without spaces and special characters
-    const message = `Name:${name},VehicleType:${vehicleType},From:${fromCity},To:${toCity},DepartureDate:${departureDate},ReturnDate:${returnDate},SpecialRequests:${specialRequest}`;
-
+	const message = `Name%3A%20${name}%2C%20`
+                  + `Vehicle%20Type%3A%20${vehicleType}%2C%20`
+                  + `From%3A%20${fromCity}%2C%20`
+                  + `To%3A%20${toCity}%2C%20`
+                  + `Departure%20Date%3A%20${departureDate}%2C%20`
+                  + `Return%20Date%3A%20${returnDate}%2C%20`
+                  + `Special%20Requests%3A%20${specialRequest}`;
     // Phone number in international format
     const phoneNumber = '918883674887';  // Replace with your number
 
@@ -604,7 +609,7 @@
 									</div>
 									<div class="col-12">
 										<div class="form-group login-btn">
-											<button class="btn" type="button" onclick="sendWhatsAppMessage()">Enquire in
+											<button class="btn" type="button" onclick="sendWhatsAppMessage2()">Enquire in
 												WhatsApp</button>
 										</div>
 									</div>
@@ -612,7 +617,7 @@
 							</form>
 
 							<script>
-								function sendWhatsAppMessage() {
+								function sendWhatsAppMessage2() {
 									const name1 = document.getElementById('name1').value;
 									const email1 = document.getElementById('email').value;
 									const phone1 = document.getElementById('phone').value;
