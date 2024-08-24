@@ -367,29 +367,29 @@
 		}
 	
 		function sendWhatsAppMessage1() {
-			const name = document.getElementById('name').value;
-			const vehicleType = document.getElementById('vehicleType').value;
-			const fromCity = document.getElementById('fromCity').value;
-			const toCity = document.getElementById('toCity').value;
-			const departureDate = document.getElementById('departureDate').value;
-			const returnDate = document.getElementById('returnDate').value;
-			const specialRequest = document.getElementById('message').value;
-	
-			// Construct the WhatsApp message with newlines (\n)
-			const message = `Name: ${name}\n`
-						  + `Vehicle Type: ${vehicleType}\n`
-						  + `From: ${fromCity}\n`
-						  + `To: ${toCity}\n`
-						  + `Departure Date: ${departureDate}\n`
-						  + `Return Date: ${returnDate}\n`
-						  + `Special Requests: ${specialRequest}`;
-			
-			const phoneNumber = '8883674887';
-			const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-	
-			// Open WhatsApp with pre-filled message
-			window.open(whatsappUrl, '_blank');
-		}
+    const name = encodeURIComponent(document.getElementById('name').value);
+    const vehicleType = encodeURIComponent(document.getElementById('vehicleType').value);
+    const fromCity = encodeURIComponent(document.getElementById('fromCity').value);
+    const toCity = encodeURIComponent(document.getElementById('toCity').value);
+    const departureDate = encodeURIComponent(document.getElementById('departureDate').value);
+    const returnDate = encodeURIComponent(document.getElementById('returnDate').value);
+    const specialRequest = encodeURIComponent(document.getElementById('message').value);
+
+    // Construct the WhatsApp message with newlines (%0A)
+    const message = `Name: ${name}%0A`
+                  + `Vehicle Type: ${vehicleType}%0A`
+                  + `From: ${fromCity}%0A`
+                  + `To: ${toCity}%0A`
+                  + `Departure Date: ${departureDate}%0A`
+                  + `Return Date: ${returnDate}%0A`
+                  + `Special Requests: ${specialRequest}`;
+
+    const phoneNumber = '8883674887';
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
+    // Open WhatsApp with pre-filled message
+    window.open(whatsappUrl, '_blank');
+}
 	</script>
 	
 	
