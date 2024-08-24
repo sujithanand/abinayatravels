@@ -593,21 +593,21 @@
 
 <script>
     function sendWhatsAppMessage() {
-        const name = document.getElementById('name1').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message1').value;
+        const name1 = document.getElementById('name1').value;
+        const email1 = document.getElementById('email').value;
+        const phone1 = document.getElementById('phone').value;
+        const subject1 = document.getElementById('subject').value;
+        const message1 = document.getElementById('message1').value;
 
         // Construct the WhatsApp message with newlines (\n)
-        const whatsappMessage = `Name: ${name}\n`
-                              + `Email: ${email}\n`
-                              + `Phone: ${phone}\n`
-                              + `Subject: ${subject}\n`
-                              + `Message: ${message}`;
+        const whatsappMessage1 = `Name: ${name1}\n`
+                              + `Email: ${email1}\n`
+                              + `Phone: ${phone1}\n`
+                              + `Subject: ${subject1}\n`
+                              + `Message: ${message1}`;
         
-        const phoneNumber = '8883674887'; // Replace with the WhatsApp number you want to send to
-        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+        const phoneNumber1 = '8883674887'; // Replace with the WhatsApp number you want to send to
+        const whatsappUrl1 = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage1)}`;
 
         // Open WhatsApp with pre-filled message
         window.open(whatsappUrl, '_blank');
