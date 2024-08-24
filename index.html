@@ -1,0 +1,725 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="Site keywords here">
+	<meta name="description" content="">
+	<meta name='copyright' content=''>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Title -->
+	<title>Abinaya Travels</title>
+
+	<!-- Favicon -->
+	<link rel="icon" href="img/favicon.png">
+
+	<!-- Google Fonts -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+		rel="stylesheet">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- Nice Select CSS -->
+	<link rel="stylesheet" href="css/nice-select.css">
+	<!-- Font Awesome CSS -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!-- icofont CSS -->
+	<link rel="stylesheet" href="css/icofont.css">
+	<!-- Slicknav -->
+	<link rel="stylesheet" href="css/slicknav.min.css">
+	<!-- Owl Carousel CSS -->
+	<link rel="stylesheet" href="css/owl-carousel.css">
+	<!-- Datepicker CSS -->
+	<link rel="stylesheet" href="css/datepicker.css">
+	<!-- Animate CSS -->
+	<link rel="stylesheet" href="css/animate.min.css">
+	<!-- Magnific Popup CSS -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
+	<!-- Medipro CSS -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+	<!-- Preloader -->
+	<div class="preloader">
+		<div class="loader">
+			<div class="loader-outter"></div>
+			<div class="loader-inner"></div>
+
+			<div class="indicator">
+				<i style="color: #fff; font-size: 32px;"class="icofont icofont-car-alt-1"></i>
+			</div>
+		</div>
+	</div>
+	<!-- End Prelogoer -->
+
+
+	<!-- Header Area -->
+	<header class="header">
+		<!-- Topbar -->
+		<div class="topbar">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-md-7 col-12">
+						<!-- Top Contact -->
+						<ul class="top-contact">
+							<li><i class="fa fa-phone"></i>+91 96004 92712</li>
+							<li><i class="fa fa-envelope"></i><a
+									href="mailto:rajuannamalai1984@gmail.com">rajuannamalai1984@gmail.com</a></li>
+						</ul>
+						<!-- End Top Contact -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Topbar -->
+		<!-- Header Inner -->
+		<div class="header-inner">
+			<div class="container">
+				<div class="inner">
+					<div class="row">
+						<div class="col-lg-3 col-md-3 col-12">
+							<!-- Start Logo -->
+							<div class="logo">
+								<a href="index.html"><img src="img/logo.png" alt="#"></a>
+							</div>
+							<!-- End Logo -->
+							<!-- Mobile Nav -->
+							<div class="mobile-nav"></div>
+							<!-- End Mobile Nav -->
+						</div>
+						<div class="col-lg-7 col-md-9 col-12">
+							<!-- Main Menu -->
+							<div class="main-menu">
+								<nav class="navigation">
+									<ul class="nav menu">
+										<li class="active"><a href="#slider">Home </a></li>
+										<li><a href="#whyUs">Why Us? </a></li>
+										<li><a href="#vechileFleet">Vechile Fleet </a></li>
+										<li><a href="#contact">Contact </a></li>
+										
+										</ul>
+								</nav>
+							</div>
+							<script>
+								// Get all menu items
+								const menuItems = document.querySelectorAll('.nav.menu li a');
+								const sections = document.querySelectorAll('section');
+								const menuHeight = document.querySelector('.main-menu').offsetHeight;
+						
+								// Function to remove 'active' class from all menu items
+								function removeActiveClasses() {
+									menuItems.forEach(item => {
+										item.parentElement.classList.remove('active');
+									});
+								}
+						
+								// Function to add 'active' class to the current section's menu item
+								function setActiveClass() {
+									let currentIndex = sections.length;
+						
+									while (--currentIndex && window.scrollY + menuHeight < sections[currentIndex].offsetTop) {}
+						
+									removeActiveClasses();
+									menuItems[currentIndex].parentElement.classList.add('active');
+								}
+						
+								// Add click event to each menu item for smooth scroll
+								menuItems.forEach(item => {
+									item.addEventListener('click', function(e) {
+										e.preventDefault(); // Prevent default anchor click behavior
+						
+										const targetId = this.getAttribute('href').substring(1);
+										const targetSection = document.getElementById(targetId);
+						
+										window.scrollTo({
+											top: targetSection.offsetTop - menuHeight, // Adjust for fixed menu height
+											behavior: 'smooth'
+										});
+						
+										removeActiveClasses();
+										this.parentElement.classList.add('active');
+									});
+								});
+						
+								// Add scroll event listener to update active menu item
+								window.addEventListener('scroll', setActiveClass);
+							</script>
+							<!--/ End Main Menu -->
+						</div>
+						<div class="col-lg-2 col-12">
+							<div class="get-quote">
+								<a href="#appointment" class="btn">Book My Ride</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/ End Header Inner -->
+	</header>
+	<!-- End Header Area -->
+
+	<!-- Slider Area -->
+	<section class="slider" id="slider">
+		<div class="hero-slider">
+			<!-- Start Single Slider -->
+			<div class="single-slider" style="background-image:url('img/slider3.png')">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-7">
+							<div class="text">
+								<h1>Travel<span> far</span> Travel <span>wide</span></h1>
+								<h1>Tavel <span>with Us!</span></h1>
+								<p>Discover Seamless Travels with Abinaya Tours and Travels</p>
+								<div class="button">
+									<a href="#appointment" class="btn">Book My Ride</a>
+									<a href="#" class="btn primary">About Us</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Single Slider -->
+			<!-- Start Single Slider -->
+			<div class="single-slider" style="background-image:url('img/slider2.png')">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-7">
+							<div class="text">
+								<h1>We Provide <span>Travels</span> Services You Can<span> Trust!</span></h1>
+								<p> Trsuted by hunderds of happy customers</p>
+								<div class="button">
+									<a href="#appointment" class="btn">Book My Ride</a>
+									<a href="#" class="btn primary">About Us</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Start End Slider -->
+			<!-- Start Single Slider -->
+			<div class="single-slider" style="background-image:url('img/slider.png')">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-7">
+							<div class="text">
+								<h1><span>Rent a Car</span> or <span>Hire a cab</span></h1>
+								<h1>at your convinience</h1>
+								<p>Discover Seamless Travels with Abinaya Tours and Travels</p>
+								<div class="button">
+									<a href="#appointment" class="btn">Book My Ride</a>
+									<a href="#" class="btn primary">About Us</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Single Slider -->
+		</div>
+	</section>
+	<!--/ End Slider Area -->
+
+
+	<!-- Start Appointment -->
+	<section class="appointment" id="appointment">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="section-title">
+						<h2>Book Your Ride</h2>
+						<p>Book your ride by filling the form</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6 col-md-12 col-12">
+					<form class="form" id="bookingForm" action="#">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-12">
+								<div class="form-group">
+									<input name="name" id="name" type="text" placeholder="Name" required>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-12">
+								<div class="form-group">
+									<select id="vehicleType" class="form-control wide" required>
+										<option value="Swift - 4+1 seater">Swift - 4+1 seater</option>
+										<option value="Innova - 7+1 seater">Innova - 7+1 seater</option>
+										<option value="Verito - 4+1 seater">Verito - 4+1 seater</option>
+										<option value="Tempo Traveller">Tempo Traveller</option>
+										<option value="Bus">Bus</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-12">
+								<div class="form-group">
+									<input name="fromCity" id="fromCity" type="text" placeholder="From" required>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-12">
+								<div class="form-group">
+									<input name="toCity" id="toCity" type="text" placeholder="To" required>
+								</div>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 col-12">
+								<div class="form-group">
+									<input type="text" placeholder="Departure Date" id="departureDate" required>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-12">
+								<div class="form-group">
+									<input type="text" placeholder="Return Date" id="returnDate" required>
+								</div>
+							</div>
+							<div class="col-lg-12 col-md-12 col-12">
+								<div class="form-group">
+									<textarea name="message" id="message" placeholder="Please mention if you have any special requests..."></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-5 col-md-4 col-12">
+								<div class="form-group">
+									<div class="button">
+										<button type="button" class="btn" onclick="validateAndSendMessage()">Book My Ride</button>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-7 col-md-8 col-12">
+								<p>You will be redirected to WhatsApp <span><i class="icofont-whatsapp"></i></span></p>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="col-lg-6 col-md-12">
+					<div class="appointment-image">
+						<img src="img/contact-img.png" alt="#">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!-- Include jQuery and jQuery UI for Datepicker -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	
+	<script>
+		// Initialize Datepickers
+		$(function() {
+			const today = new Date();
+	
+			// Set up the Departure Date picker with minimum date as today
+			$("#departureDate").datepicker({
+				dateFormat: "yy-mm-dd",
+				minDate: today,
+				onSelect: function(selectedDate) {
+					// Set the Return Date picker to have a minimum date of the selected Departure Date
+					$("#returnDate").datepicker("option", "minDate", selectedDate);
+				}
+			});
+	
+			// Set up the Return Date picker with no minimum date initially
+			$("#returnDate").datepicker({
+				dateFormat: "yy-mm-dd",
+				minDate: today // Initially set to today's date, will update based on Departure Date selection
+			});
+		});
+	
+		function validateAndSendMessage() {
+			const today = new Date();
+			const departureDate = new Date(document.getElementById('departureDate').value);
+			const returnDate = new Date(document.getElementById('returnDate').value);
+	
+			// Clear the time part for an accurate date comparison
+			today.setHours(0, 0, 0, 0);
+			departureDate.setHours(0, 0, 0, 0);
+			returnDate.setHours(0, 0, 0, 0);
+	
+			// Validate Departure Date is not less than today
+			if (departureDate < today) {
+				alert("Departure date cannot be earlier than today.");
+				return;
+			}
+	
+			// Validate Return Date is not earlier than Departure Date
+			if (returnDate < departureDate) {
+				alert("Return date cannot be earlier than departure date.");
+				return;
+			}
+	
+			sendWhatsAppMessage();
+		}
+	
+		function sendWhatsAppMessage() {
+			const name = document.getElementById('name').value;
+			const vehicleType = document.getElementById('vehicleType').value;
+			const fromCity = document.getElementById('fromCity').value;
+			const toCity = document.getElementById('toCity').value;
+			const departureDate = document.getElementById('departureDate').value;
+			const returnDate = document.getElementById('returnDate').value;
+			const specialRequest = document.getElementById('message').value;
+	
+			// Construct the WhatsApp message with newlines (\n)
+			const message = `Name: ${name}\n`
+						  + `Vehicle Type: ${vehicleType}\n`
+						  + `From: ${fromCity}\n`
+						  + `To: ${toCity}\n`
+						  + `Departure Date: ${departureDate}\n`
+						  + `Return Date: ${returnDate}\n`
+						  + `Special Requests: ${specialRequest}`;
+			
+			const phoneNumber = '8883674887';
+			const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+	
+			// Open WhatsApp with pre-filled message
+			window.open(whatsappUrl, '_blank');
+		}
+	</script>
+	
+	
+	
+	<!-- End Appointment -->
+
+	<!-- Start Feautes -->
+	<section class="pricing-table section" id="whyUs">
+	<section class="Feautes section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="section-title">
+						<h2>What Makes Us Different</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-12">
+					<!-- Start Single features -->
+					<div class="single-features">
+						<div class="signle-icon">
+							<i class="icofont icofont-money"></i>
+						</div>
+						<h3> For any budget </h3>
+						<p>We have a fleet of vechiles that allows us to serve you with a vechile that fits your budget
+						</p>
+					</div>
+					<!-- End Single features -->
+				</div>
+				<div class="col-lg-4 col-12">
+					<!-- Start Single features -->
+					<div class="single-features">
+						<div class="signle-icon">
+							<i class="icofont icofont-road"></i>
+						</div>
+						<h3>For any distance</h3>
+						<p>You can book a cab within the city or outstations</p>
+					</div>
+					<!-- End Single features -->
+				</div>
+				<div class="col-lg-4 col-12">
+					<!-- Start Single features -->
+					<div class="single-features last">
+						<div class="signle-icon">
+							<i class="icofont icofont-clock-time"></i>
+						</div>
+						<h3>For any duration</h3>
+						<p>You can hire a cab with diver on day basis at your convinience</p>
+					</div>
+					<!-- End Single features -->
+				</div>
+			</div>
+		</div>
+	</section>
+</section>
+	<!--/ End Feautes -->
+	<section class="services section" id="vechileFleet">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="section-title">
+						<h2>Our Vechile Fleet</h2>
+						<p>We have a fleet of vechiles that allows us to serve you with a vechile that fits your budget</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-12">
+					<!-- Start Single Service -->
+					<div class="single-service">
+						<i class="icofont icofont-car-alt-2"></i>
+						<h4><a href="service-details.html">4+1 Seater</a></h4>
+						<p>Comfortable and Stylish Rides Our 4+1 sedan cars are perfect for small groups or families seeking a comfortable and stylish ride. With seating for up to 4 passengers and ample luggage space, our sedans are ideal for city tours, airport transfers, and business trips. Enjoy a smooth, hassle-free journey with luxurious interiors and modern amenities.</p>	
+					</div>
+					<!-- End Single Service -->
+				</div>
+				<div class="col-lg-6 col-md-6 col-12">
+					<!-- Start Single Service -->
+					<div class="single-service">
+						<i class="icofont icofont-van"></i>
+						<h4><a href="service-details.html">7+1 Seater</a></h4>
+						<p>Spacious and Versatile For those needing a bit more room, our 7+1 cars like the Toyota Innova are the perfect choice. These vehicles offer spacious seating for up to 7 passengers, making them ideal for family outings, road trips, or group travel. With a combination of comfort and versatility, these cars ensure everyone enjoys the journey. </p>	
+					</div>
+					<!-- End Single Service -->
+				</div>
+				<div class="col-lg-6 col-md-6 col-12">
+					<!-- Start Single Service -->
+					<div class="single-service">
+						<i class="icofont icofont-bus-alt-2"></i>
+						<h4><a href="service-details.html">Tempo Travel</a></h4>
+						<p>Spacious and Versatile For those needing a bit more room, our 7+1 cars like the Toyota Innova are the perfect choice. These vehicles offer spacious seating for up to 7 passengers, making them ideal for family outings, road trips, or group travel. With a combination of comfort and versatility, these cars ensure everyone enjoys the journey. </p>	
+					</div>
+					<!-- End Single Service -->
+				</div>
+				<div class="col-lg-6 col-md-6 col-12">
+					<!-- Start Single Service -->
+					<div class="single-service">
+						<i class="icofont icofont-school-bus"></i>
+						<h4><a href="service-details.html">Bus</a></h4>
+						<p>Ideal for Large Groups When traveling with a large group, our buses are the ideal choice. Accommodating up to 50 passengers, our buses are perfect for school trips, corporate events, or large family gatherings. Equipped with comfortable seating, air conditioning, and entertainment options, our buses ensure that everyone arrives at their destination relaxed and refreshed.
+
+						</p>	
+					</div>
+					<!-- End Single Service -->
+				</div>
+				
+			</div>
+		</div>
+	</section>
+	<!--/ End service -->
+	<!-- Start Fun-facts -->
+	<div id="fun-facts" class="fun-facts section overlay">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-12">
+					<!-- Start Single Fun -->
+					<div class="single-fun">
+						<i class="icofont icofont-car-alt-3"></i>
+						<div class="content">
+							<span class="counter">10</span>
+							<p>Vechile Fleet</p>
+						</div>
+					</div>
+					<!-- End Single Fun -->
+				</div>
+				<div class="col-lg-4 col-md-4 col-12">
+					<!-- Start Single Fun -->
+					<div class="single-fun">
+						<i class="icofont-simple-smile"></i>
+						<div class="content">
+							<span class="counter">500</span>
+							<p>Plus Happy Travellers</p>
+						</div>
+					</div>
+					<!-- End Single Fun -->
+				</div>
+				<div class="col-lg-4 col-md-4 col-12">
+					<!-- Start Single Fun -->
+					<div class="single-fun">
+						<i class="icofont icofont-table"></i>
+						<div class="content">
+							<span class="counter">15</span>
+							<p>Years of Experience</p>
+						</div>
+					</div>
+					<!-- End Single Fun -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--/ End Fun-facts -->
+
+				
+		<!-- Start Contact Us -->
+		<section class="contact-us section" id="contact">
+			<div class="container">
+				<div class="inner">
+					<div class="row"> 
+					
+						<div class="col-lg-12">
+							<div class="contact-us-form" >
+								<h2>Contact With Us</h2>
+								<p>If you have any questions please fell free to contact with us.</p>
+								<!-- Form -->
+								<!-- Your Form -->
+<form class="form" id="whatsappForm" method="post" action="mail/mail.php">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="Name" required="">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Email" required="">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <input type="text" id="phone" name="phone" placeholder="Phone" required="">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <input type="text" id="subject" name="subject" placeholder="Subject" required="">
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="form-group">
+                <textarea id="message" name="message" placeholder="Your Message" required=""></textarea>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group login-btn">
+                <button class="btn" type="button" onclick="sendWhatsAppMessage()">Enquire in WhatsApp</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+    function sendWhatsAppMessage() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+
+        // Construct the WhatsApp message with newlines (\n)
+        const whatsappMessage = `Name: ${name}\n`
+                              + `Email: ${email}\n`
+                              + `Phone: ${phone}\n`
+                              + `Subject: ${subject}\n`
+                              + `Message: ${message}`;
+        
+        const phoneNumber = '8883674887'; // Replace with the WhatsApp number you want to send to
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+        // Open WhatsApp with pre-filled message
+        window.open(whatsappUrl, '_blank');
+    }
+</script>
+
+								<!--/ End Form -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="contact-info">
+					<div class="row">
+						<!-- single-info -->
+						<div class="col-lg-4 col-12 ">
+							<div class="single-info">
+								<i class="icofont icofont-ui-call"></i>
+								<div class="content">
+									<h3>+91 96004 92712</h3>
+									<p>rajuannamalai1984@gmail.com</p>
+								</div>
+							</div>
+						</div>
+						<!--/End single-info -->
+						<!-- single-info -->
+						<div class="col-lg-4 col-12 ">
+							<div class="single-info">
+								<i class="icofont-google-map"></i>
+								<div class="content">
+									<h3>No 9/ 290, Sowbaghiya Nagar</h3>
+									<p>Annaikoundampatty Salem - 636011</p>
+								</div>
+							</div>
+						</div>
+						<!--/End single-info -->
+						<!-- single-info -->
+						<div class="col-lg-4 col-12 ">
+							<div class="single-info">
+								<i class="icofont icofont-wall-clock"></i>
+								<div class="content">
+									<h3>Open 24/7</h3>
+									<p> Our office is open round the clock</p>
+								</div>
+							</div>
+						</div>
+						<!--/End single-info -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--/ End Contact Us -->
+	<!-- Footer Area -->
+	<footer id="footer" class="footer ">
+		<!-- Footer Top -->
+		
+		<!-- Copyright -->
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-12">
+						<div class="copyright-content">
+							<p>© Copyright 2024 | All Rights Reserved by <a href="https://www.wpthemesgrid.com"
+									target="_blank">Abinaya Tours and Travels</a> </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/ End Copyright -->
+	</footer>
+	<!--/ End Footer Area -->
+
+	<!-- jquery Min JS -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jquery Migrate JS -->
+	<script src="js/jquery-migrate-3.0.0.js"></script>
+	<!-- jquery Ui JS -->
+	<script src="js/jquery-ui.min.js"></script>
+	<!-- Easing JS -->
+	<script src="js/easing.js"></script>
+	<!-- Color JS -->
+	<script src="js/colors.js"></script>
+	<!-- Popper JS -->
+	<script src="js/popper.min.js"></script>
+	<!-- Bootstrap Datepicker JS -->
+	<script src="js/bootstrap-datepicker.js"></script>
+	<!-- Jquery Nav JS -->
+	<script src="js/jquery.nav.js"></script>
+	<!-- Slicknav JS -->
+	<script src="js/slicknav.min.js"></script>
+	<!-- ScrollUp JS -->
+	<script src="js/jquery.scrollUp.min.js"></script>
+	<!-- Niceselect JS -->
+	<script src="js/niceselect.js"></script>
+	<!-- Tilt Jquery JS -->
+	<script src="js/tilt.jquery.min.js"></script>
+	<!-- Owl Carousel JS -->
+	<script src="js/owl-carousel.js"></script>
+	<!-- counterup JS -->
+	<script src="js/jquery.counterup.min.js"></script>
+	<!-- Steller JS -->
+	<script src="js/steller.js"></script>
+	<!-- Wow JS -->
+	<script src="js/wow.min.js"></script>
+	<!-- Magnific Popup JS -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<!-- Counter Up CDN JS -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Main JS -->
+	<script src="js/main.js"></script>
+</body>
+
+</html>
