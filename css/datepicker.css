@@ -88,7 +88,7 @@
 .datepicker td.active:hover[disabled] {
   color: #ffffff;
   background-color: var(--primary);
-  *background-color: var(--primary);
+
 }
 .datepicker td.active:active,
 .datepicker td.active:hover:active,
