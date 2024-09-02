@@ -6,6 +6,8 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  */
+ @import url(premitive.css);
+
 .datepicker {
   top: 0;
   left: 0;
@@ -54,7 +56,7 @@
 	font-weight: 400;
 }
 .datepicker td.day:hover {
-  background: #1A76D1;
+  background: var(--primary);
   cursor: pointer;
   color:#fff;
 }
@@ -68,7 +70,7 @@
 .datepicker td.active,
 .datepicker td.active:hover {
   color: #ffffff;
-  background-color: #1A76D1;
+  background-color: var(--primary);
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
@@ -85,8 +87,8 @@
 .datepicker td.active[disabled],
 .datepicker td.active:hover[disabled] {
   color: #ffffff;
-  background-color: #1A76D1;
-  *background-color: #1A76D1;
+  background-color: var(--primary);
+  *background-color: var(--primary);
 }
 .datepicker td.active:active,
 .datepicker td.active:hover:active,
@@ -107,11 +109,11 @@
   border-radius: 4px;
 }
 .datepicker td span:hover {
-  background: #1A76D1;
+  background: var(--primary);
 }
 .datepicker td span.active {
   color: #ffffff;
-  background-color: #1A76D1;
+  background-color: var(--primary);
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
@@ -143,7 +145,7 @@
   cursor: pointer;
 }
 .datepicker thead tr:first-child th:hover {
-  background: #1A76D1;
+  background: var(--primary);
   color:#fff;
 }
 .input-append.date .add-on i,
